@@ -20,15 +20,15 @@ d3.csv(dataFile, function(data) {
 	
 	var lines2 = d3.line().
 	x(function(d,i){ return i * (width/ln); }).
-	y(function(d){ return d.High * (height/maxy) + hshift; });
+	y(function(d){ return height - d.Open * (height/maxHigh) ; });
 
 	var lines3 = d3.line().
 	x(function(d,i){ return i * (width/ln); }).
-	y(function(d){ return d.High * (height/maxy) + hshift; });
+	y(function(d){ return height - d.Open * (height/maxHigh) ; });
 
 	var lines4 = d3.line().
 	x(function(d,i){ return i * (width/ln); }).
-	y(function(d){ return d.High * (height/maxy) + hshift; });
+	y(function(d){ return height - d.Open * (height/maxHigh) ; });
 
 	ctrl.append("path").data([data]).
 	attr("class", "pathline").
